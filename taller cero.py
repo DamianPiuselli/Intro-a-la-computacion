@@ -26,10 +26,10 @@ def jugar(a):  # a: es una lista que representa un mazo
     return total   #la funcion regresa la suma del jugador.
 
 def jugarVarios(a,n): # a: es una lista que representa un mazo  n: numero de jugadores
-    lista_total=[0]*n    #inicializo una lista para el total de c/u de los n jugadores
+    res=[0]*n    #inicializo una lista para el total de c/u de los n jugadores
     for i in range(n):  # loopeo segun el numero de jugadores
-        lista_total[i] = jugar(a)  # cada jugador "juega" y se guarda su total en la posicion i-esima
-    return lista_total             # la funcion regresa una lista con el total de cada jugador.
+        res[i] = jugar(a)  # cada jugador "juega" y se guarda su total en la posicion i-esima
+    return res            # la funcion regresa una lista con el total de cada jugador.
 
  
 def verQuienGano(res):  #res = lista de los resultados. Se considera el ganador al primer jugador (en orden) en estar mas cerca de 21.
@@ -46,16 +46,14 @@ def verQuienGano(res):  #res = lista de los resultados. Se considera el ganador 
         puntaje_minimo += 1
     return QuienGano
 
-def jugar(a):  # a: es una lista que representa un mazo
+# Para jugar otro, considero que una mejor estrategia que robar hasta pasarse es para de robar a una cierta distancia de 21.
+def jugarOtro(a, min_score=19):  # a: es una lista que representa un mazo, min_score: el score minimo para dejar de robar.
     total=0     # inicializo la suma del jugador
-    while total < 21:  # loop que se para cuando el total es >= a 21
+    while total < min_score:
         total += a.pop()  #elimina el primer item del mazo y lo suma al total
     return total   #la funcion regresa la suma del jugador.
 
-test = [19,26,20,15,21]
-
-print(verQuienGano(test))
-         
+test = [19,26,20,15,11]
              
          
          
