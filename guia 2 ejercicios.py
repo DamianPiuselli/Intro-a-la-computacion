@@ -219,7 +219,7 @@ def reverso(a):
 
 # Ejercicio 5
     
-def 
+def  ad
         
         
             
