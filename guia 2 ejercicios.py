@@ -218,8 +218,40 @@ def reverso(a):
     return a_reverso
 
 # Ejercicio 5
+#A    
+def raiz(n): #requiere n positivo.
+    return n**0.5
+#B
+def sumaDePares(a):
+    suma = 0
+    for x in a:
+        if x%2==0:
+            suma +=x
+    return suma
+#C
+def invertirSecuencia(a):  ## esta funcion ya la hice.
+    return reverso(a)
+#D
+def promedioDeImpares(a):
+    suma = 0
+    for x in a:
+        if x%2==1:
+            suma +=x
+    return suma/len(a)
+
+#E
+def minimo(a):
+    current = a[0]  
+    for i in a:
+        if i<= current:
+            current = i
+    return current
+#F
+def 
     
-def  ad
+  
+    
+
         
         
             
